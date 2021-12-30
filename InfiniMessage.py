@@ -1,23 +1,25 @@
 import time
-import PySimpleGUI
+import PySimpleGUI as sg
 import pyautogui
 
 
 def infini_message_main():
-    option = str(input("Would you like to iterate a string or a number ? 'number' or 'string': "))
+    option = str(input("Would you like to iterate a string or a number ? 'number' or 'string': \n-->"))
     while option != "number" and option != "string":
         print("Invalid input, choose a correct option.")
-        option = str(input("Would you like to iterate a string or a number ? 'number' or 'string'"))
+        option = str(input("Would you like to iterate a string or a number ? 'number' or 'string': \n-->"))
 
-    time_between_output = float(input("Input an input interval in seconds: "))
+    print("\n")
+    time_between_output = float(input("Input an input interval in seconds:  \n-->"))
     while time_between_output < 0:
         print("Time can not be less than 0 seconds.")
-        time_between_output = float(input("Input an input interval in seconds: "))
+        time_between_output = float(input("Input an input interval in seconds:  \n-->"))
 
-    iteration = int(input("How often do you want it to print: "))
+    print("\n")
+    iteration = int(input("How often do you want it to print:  \n-->"))
     while iteration < 0:
         print("Amount to iterate can not be less than 0.")
-        iteration = int(input("How often do you want it to print: "))
+        iteration = int(input("How often do you want it to print:  \n-->"))
 
     if option == "number":
         infini_message_numbers(iteration, time_between_output)
@@ -26,7 +28,9 @@ def infini_message_main():
 
 
 def infini_message_string(iteration, time_between_output):
-    string_to_print = str(input("What message do you want to output: "))
+    print("\n")
+    string_to_print = str(input("What message do you want to output:  \n-->"))
+    print("\n")
     print("output commencing in 5 seconds")
     time.sleep(5)
     counter = 0
@@ -41,8 +45,10 @@ def infini_message_string(iteration, time_between_output):
 
 
 def infini_message_numbers(iteration, time_between_output):
-    starting_number = int(input("What will be the first number to output: "))
+    print("\n")
+    starting_number = int(input("What will be the first number to output:  \n-->"))
     number = int(starting_number)
+    print("\n")
     print("output commencing in 5 seconds")
     time.sleep(5)
     counter = 0
