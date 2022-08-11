@@ -59,6 +59,7 @@ def infini_message_numbers(iteration, time_between_output):
         pyautogui.press('enter')
         number += 1
         counter += 1
+
     print("Program Finished")
     raise SystemExit
 
